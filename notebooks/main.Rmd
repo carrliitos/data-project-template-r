@@ -1,0 +1,31 @@
+---
+title: "Project Name"
+author: "Benzon Carlitos Salazar"
+date: '`r strftime(Sys.time(), "%B %d, %Y")`'
+output: 
+  html_document:
+    code_folding: show
+    df_print: paged
+    toc: TRUE
+    toc_float: TRUE
+    theme: cosmo
+  pdf_document:
+    df_print: kable
+---
+
+```{r setup, include=FALSE}
+options(knitr.kable.NA = "")
+options(knitr.duplicate.label = "allow")
+options(gt.html_tag_check = FALSE)
+
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+```{r, include=FALSE}
+files <- list.files(pattern = "\\d+.*\\Rmd", recursive = TRUE)
+chunks <- paste0('```{r child ="', files, '"}\n```\n')
+cat(chunks, sep = "\n")
+```
+
+# Project Overview
+Description goes here.
