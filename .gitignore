@@ -28,6 +28,8 @@ reports/*_cache
 # Ignore the configuration file to protect any secrets
 config.yml
 
+R/keys.R
+
 ################################################################################
 #                                                                              #
 # Project-specific Settings                                                    #
